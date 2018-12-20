@@ -67,7 +67,7 @@ class FenerumClient:
         })
 
     def create_subscription(self, account_code, terms_uuid, quantity, collection_method):
-        return self.make_request('accounts/{}/subscribe/'.format(account_code), data={
+        return self.make_request('accounts/{}/subscribe/'.format(account_code), method='post', data={
             'terms': terms_uuid,
             'quantity': quantity,
             'collection_method': collection_method,
